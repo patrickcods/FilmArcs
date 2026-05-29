@@ -19,9 +19,14 @@ function App() {
       setMediaAvaliacao(null); // Limpa a média anterior ao trocar de filme
      fetch(`${API_BASE}/api/v1/avaliacoes/${filmeSelecionado.id}/media`)
         .then(res => res.json())
-        .then(data => setMediaAvaliacao(data))
+        .then(data => {
+          console.log("O que o backend respondeu:", data);
+          setMediaAvaliacao(data);
+        })
+        
         .catch(err => console.error("Erro ao buscar média:", err));
     }
+
   }, [filmeSelecionado]);
 
   const lidarComSelecao = (filme) => {
