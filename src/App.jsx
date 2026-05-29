@@ -11,13 +11,13 @@ function App() {
   const [avaliacao, setAvaliacao] = useState(null);
   const [mediaAvaliacao, setMediaAvaliacao] = useState(null);
   const [notificacao, setNotificacao] = useState('')
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API_BASE = import.meta.env.VITE_API_URL
 
   // Este useEffect roda sempre que um filme é selecionado
   useEffect(() => {
     if (filmeSelecionado) {
       setMediaAvaliacao(null); // Limpa a média anterior ao trocar de filme
-      fetch(`${API_URL}/api/v1/avaliacoes/${filmeSelecionado.id}/media`)
+      fetch('${API_BASE}/api/v1/avaliacoes/${filmeSelecionado.id}/media')
         .then(res => res.json())
         .then(data => setMediaAvaliacao(data))
         .catch(err => console.error("Erro ao buscar média:", err));
@@ -35,7 +35,7 @@ function App() {
 
   const salvarAvaliacao = async (dados) => {
     try {
-      const response = await fetch("${API_URL}/api/v1/avaliacoes/", {
+      const response = await fetch("${API_BASE}/api/v1/avaliacoes/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
