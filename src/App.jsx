@@ -11,7 +11,7 @@ function App() {
   const [avaliacao, setAvaliacao] = useState(null);
   const [mediaAvaliacao, setMediaAvaliacao] = useState(null);
   const [notificacao, setNotificacao] = useState('')
-  const API_BASE = import.meta.env.VITE_API_URL
+  const API_BASE = 'https://filmarcs-production.up.railway.app'
 
   // Este useEffect roda sempre que um filme é selecionado
   useEffect(() => {
