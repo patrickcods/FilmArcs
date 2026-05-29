@@ -23,6 +23,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.options("/{rest_of_path:path}")
+async def preflight_handler(rest_of_path: str):
+    return Response(status_code=200)
+
 # Cria as tabelas no banco automaticamente
 models.Base.metadata.create_all(bind=engine)
 
