@@ -11,7 +11,7 @@ function App() {
   const [avaliacao, setAvaliacao] = useState(null);
   const [mediaAvaliacao, setMediaAvaliacao] = useState(null);
   const [notificacao, setNotificacao] = useState('')
-  const API_BASE = 'https://filmarcs-production.up.railway.app'
+  const API_BASE = import.meta.env.VITE_API_URL
 
   // Este useEffect roda sempre que um filme é selecionado
   useEffect(() => {
@@ -35,7 +35,7 @@ function App() {
 
   const salvarAvaliacao = async (dados) => {
     try {
-      const response = await ffetch(`${API_BASE}/api/v1/avaliacoes/`, {
+      const response = await fetch(`${API_BASE}/api/v1/avaliacoes/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
