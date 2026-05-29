@@ -8,10 +8,16 @@ from sqlalchemy import func
 # Define o app UMA ÚNICA VEZ
 app = FastAPI()
 
-# Configuração do CORS (agora ele vai ser aplicado corretamente ao app)
+
+
+origins = [
+    "http://localhost:5173",  # Para quando você rodar o front no seu PC
+    "https://SEU-LINK-DA-VERCEL.vercel.app" # O link que a Vercel vai te dar
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
