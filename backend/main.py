@@ -4,6 +4,7 @@ from database import engine, get_db
 import models, schemas
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import func
+import os
 
 # Define o app UMA ÚNICA VEZ
 app = FastAPI()
@@ -22,10 +23,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-@app.options("/{rest_of_path:path}")
-async def preflight_handler(rest_of_path: str):
-    return Response(status_code=200)
 
 # Cria as tabelas no banco automaticamente
 models.Base.metadata.create_all(bind=engine)
@@ -54,3 +51,7 @@ def obter_media(filme_id: int, db: Session = Depends(get_db)):
         return {"inicio": 0, "meio": 0, "fim": 0}
         
     return {"inicio": round(media[0], 1), "meio": round(media[1], 1), "fim": round(media[2], 1)}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
