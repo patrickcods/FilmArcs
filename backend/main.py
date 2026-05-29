@@ -11,8 +11,8 @@ app = FastAPI()
 
 
 origins = [
-    "http://localhost:5173",  # Para quando você rodar o front no seu PC
-    "https://SEU-LINK-DA-VERCEL.vercel.app" # O link que a Vercel vai te dar
+    "http://localhost:5173",
+    "https://film-arcs-ebqdq1rhz-patrick-carvalho-souza-s-projects.vercel.app/"
 ]
 
 app.add_middleware(
