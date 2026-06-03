@@ -125,7 +125,11 @@ function App() {
               {avaliacao && (
                 <div style={{ marginTop: '2rem', height: '300px', width: '100%' }}>
                   <h3 style={{ color: '#E50914' }}>Curva de Engajamento:</h3>
-                  <MovieChart avaliacao={avaliacao} media={mediaAvaliacao} />
+                  <MovieChart 
+                    avaliacao={avaliacao} 
+                    media={mediaAvaliacao} 
+                    nomeFilme={filmeSelecionado.title}
+                  />
                 </div>
               )}
             </div>
