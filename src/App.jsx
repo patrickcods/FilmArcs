@@ -34,6 +34,7 @@ function App() {
     setAvaliacao(null);
   };
 
+  {"Voltar para buscar"}
   const voltarParaBusca = () => {
     setFilmeSelecionado(null);
   };
