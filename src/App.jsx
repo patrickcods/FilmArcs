@@ -13,7 +13,7 @@ function App() {
   const [notificacao, setNotificacao] = useState('')
   const API_BASE = import.meta.env.VITE_API_URL
 
-  // Este useEffect roda sempre que um filme é selecionado
+ 
   useEffect(() => {
     if (filmeSelecionado) {
       setMediaAvaliacao(null); // Limpa a média anterior ao trocar de filme
@@ -33,9 +33,8 @@ function App() {
     setFilmeSelecionado(filme);
     setAvaliacao(null);
   };
-
-  const voltarParaBusca = () => {
-    setFilmeSelecionado(null);
+   // Volta para busca 
+    setFilmeSelecionado(null);;;
   };
 
   const salvarAvaliacao = async (dados) => {
