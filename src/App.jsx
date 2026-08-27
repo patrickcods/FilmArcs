@@ -34,7 +34,7 @@ function App() {
     setAvaliacao(null);
   };
    // Volta para busca 
-    setFilmeSelecionado(null);;;
+    setFilmeSelecionado(null);
   };
 
   const salvarAvaliacao = async (dados) => {
@@ -166,6 +166,5 @@ function App() {
       </div>
     </div>
   );
-}
 
 export default App;
