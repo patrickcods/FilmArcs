@@ -41,4 +41,4 @@ O **FilmArcs** é uma plataforma full-stack desenvolvida para analisar e visuali
 
 ---
 
-Desenvolvido por **Patrick Carvalho Souza**.git status
+Desenvolvido por **Patrick Carvalho Souza**
